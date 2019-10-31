@@ -1,4 +1,4 @@
-package com.dudu.testsrc.problem131;
+package com.dudu.testsrc.p131;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

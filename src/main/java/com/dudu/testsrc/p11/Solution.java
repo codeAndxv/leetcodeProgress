@@ -1,4 +1,4 @@
-package com.dudu.testsrc.elevenproblem;
+package com.dudu.testsrc.p11;
 
 public class Solution {
     public int maxArea(int[] height) {
