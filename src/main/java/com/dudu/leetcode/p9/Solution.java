@@ -1,4 +1,4 @@
-package com.dudu.testsrc.nineproblem;
+package com.dudu.leetcode.p9;
 
 import org.junit.jupiter.api.Test;
 

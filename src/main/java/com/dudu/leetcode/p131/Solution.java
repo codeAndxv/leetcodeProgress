@@ -1,4 +1,4 @@
-package com.dudu.testsrc.p131;
+package com.dudu.leetcode.p131;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

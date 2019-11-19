@@ -1,4 +1,4 @@
-package com.codebest.SixProblem;
+package com.dudu.leetcode.p6;
 
 /**
  * @author code

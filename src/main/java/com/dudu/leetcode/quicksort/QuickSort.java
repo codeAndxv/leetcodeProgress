@@ -1,4 +1,4 @@
-package com.dudu.testsrc.quicksort;
+package com.dudu.leetcode.quicksort;
 
 import com.alibaba.fastjson.JSONObject;
 

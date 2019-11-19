@@ -1,4 +1,4 @@
-package com.codebest.FourProblem;
+package com.dudu.leetcode.p4;
 
 /**
  * @author code

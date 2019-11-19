@@ -1,4 +1,4 @@
-package com.codebest.FiveProblem;
+package com.dudu.leetcode.p5;
 
 /**
  * @author code
@@ -51,12 +51,9 @@ class Solution {
         return true;
     }
 
-
-
     public static void main(String args[]){
         Solution solution = new Solution();
         System.out.println(solution.isPalindromic("aba"));
     }
-
 
 }

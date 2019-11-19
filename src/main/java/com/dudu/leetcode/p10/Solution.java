@@ -1,4 +1,4 @@
-package com.dudu.testsrc.p10;
+package com.dudu.leetcode.p10;
 
 import java.util.HashSet;
 import java.util.Set;
