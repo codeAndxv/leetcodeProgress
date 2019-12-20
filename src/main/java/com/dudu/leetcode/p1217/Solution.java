@@ -1,4 +1,4 @@
-package com.dudu.leetcode.p1217_play_with_chips;
+package com.dudu.leetcode.p1217;
 
 /**
  * @author zhaolu

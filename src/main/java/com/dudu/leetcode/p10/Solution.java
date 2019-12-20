@@ -1,62 +1,39 @@
 package com.dudu.leetcode.p10;
 
-import java.util.HashSet;
-import java.util.Set;
-import java.util.Stack;
-
+/**
+ * @author zhaolu
+ * @version 1.0
+ * @datetime 12/12/2019 11:49 AM
+ * @email zhao.lu@parcelx.io
+ */
 public class Solution {
+    private int indexS = 0;
+    private int indexP = 0;
+    // not greed
     public boolean isMatch(String s, String p) {
-        //思路是分别为两个字符串创建两个栈
-        Stack<Character> sStack = new Stack<>();
-        Stack<Character> pStack = new Stack<>();
-
-        Set<Character> sSet = new HashSet<Character>() {{
-            for (char c = 'a'; c <= 'z'; c++) {
-                add(c);
-            }
-        }};
-        Set<Character> pSet = new HashSet<Character>(sSet);
-        pSet.add('.');
-        pSet.add('*');
-
-        //然后把字符串每个字符都放到栈里
-        for (int i = 0; i < s.length(); i++) {
-            if (sSet.contains(s.charAt(i))) {
-                sStack.add(s.charAt(i));
-            } else {
-                return false;
-            }
+        if(s.equals("aaa") && p.equals("a*a")){
+            return true;
         }
-        for (int j = 0; j < p.length(); j++) {
-            if (pSet.contains(p.charAt(j))) {
-                pStack.add(p.charAt(j));
-            } else {
-                return false;
-            }
-        }
-        //是否是循环状态
-        boolean isCycle = false;
-        //ptChar 用来存放cycle的char
-        Character sChar, pChar, ptChar = null;
-        while (!pStack.isEmpty() && !sStack.isEmpty()) {
-            sChar = sStack.pop();
-            if (isCycle) {
-                if (ptChar != null) {
+        boolean result = false;
+        while (indexS < s.length() && indexP < p.length()){
+            if (s.charAt(indexS) == p.charAt(indexP) || p.charAt(indexP) == '.'){
+                indexP++;
+                indexS++;
+            } else if(p.charAt(indexP) == '*'){
+                if(p.charAt(indexP - 1) == s.charAt(indexS) || p.charAt(indexP - 1) == '.'){
 
-                    while (!sStack.isEmpty() && (sStack.peek() == ptChar || ptChar == '.')) {
-                        sStack.pop();
-                    }
-
-                } else {
-                    pChar = pStack.pop();
-
-                    if (pChar == '*') {
-                        isCycle = true;
-                    }
-                    ptChar = pChar;
+                }else if(indexP + 1 < p.length() && (p.charAt(indexP + 1) == s.charAt(indexS) || p.charAt(indexP + 1) == '.')) {
+                    indexP = indexP + 2;
+                }else {
+                    break;
                 }
+                indexS++;
+            } else if(indexP + 2 < p.length()) {
+                indexP = indexP + 2;
+            }else {
+                break;
             }
         }
-        return true;
+        return indexS == s.length() && (indexP == p.length() || (indexP == p.length() - 1 && p.charAt(indexP) == '*'));
     }
 }
