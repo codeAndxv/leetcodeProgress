@@ -8,7 +8,7 @@ package com.dudu.leetcode.p10;
  */
 public class MainClass {
     public static void main(String[] args) {
-        Solution solution = new Solution();
-        System.out.println(solution.isMatch("aab", "c*a*b"));
+        Solution1 solution = new Solution1();
+        System.out.println(solution.isMatch("aaa", "a*a"));
     }
 }
