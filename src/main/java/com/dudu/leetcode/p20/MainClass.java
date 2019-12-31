@@ -1,14 +1,14 @@
-package com.dudu.leetcode.p10;
+package com.dudu.leetcode.p20;
 
 /**
  * @author zhaolu
  * @version 1.0
- * @datetime 12/12/2019 1:38 PM
+ * @datetime 12/30/2019 11:06 AM
  * @email zhao.lu@parcelx.io
  */
 public class MainClass {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        System.out.println(solution.isMatch("aaa", "a*a"));
+        System.out.println(solution.isValid("{[]}"));
     }
 }
