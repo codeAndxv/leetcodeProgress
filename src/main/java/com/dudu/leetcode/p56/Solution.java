@@ -14,29 +14,25 @@ public class Solution {
     public int[][] merge(int[][] intervals) {
         List<int[]> list = new LinkedList<>();
         for (int[] interval : intervals) {
-            boolean merge = false;
-            for (int index = 0; index < list.size(); index++) {
-                if (list.get(index)[0] >= interval[0]) {
-                    list.add(index, interval);
-                    merge = true;
+            List<Integer> involve = new LinkedList<>();
+            int index = 0;
+            while (index < list.size() && interval[1] >= list.get(index)[0]) {
+                if (list.get(index)[1] >= interval[0]) {
+                    involve.add(index);
+                    interval[0] = Math.min(list.get(index)[0], interval[0]);
+                    interval[1] = Math.max(list.get(index)[1], interval[1]);
                 }
+                index++;
             }
-            if (!merge) {
-                list.add(interval);
+            for (int i = involve.size() - 1; i >= 0; i--) {
+                list.remove((int)involve.get(i));
             }
+            list.add(involve.size() == 0 ? index : involve.get(0), interval);
         }
-        ListIterator<int[]> iterator = list.listIterator();
-        Integer right = null;
-        while (iterator.hasNext()){
-            int[] interval = iterator.next();
-            if(right == null){
-                right = interval[1];
-            }else {
-                if(interval[0]<=iterator.previous()[1]){
-                    iterator.next();
-
-                }
-            }
+        int[][] result = new int[list.size()][2];
+        for (int i = 0; i < list.size(); i++) {
+            result[i] = list.get(i);
         }
+        return result;
     }
 }
