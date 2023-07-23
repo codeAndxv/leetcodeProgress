@@ -1,2 +1,8 @@
-# leetcodeProgress
-刷leetcode的答案，有些有意思的题目会写思路
+# leetCode
+### 已完成：
+```
+120 
+397
+55
+53
+```
