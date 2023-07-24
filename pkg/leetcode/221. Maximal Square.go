@@ -13,6 +13,9 @@ func MaximalSquare(matrix [][]byte) int {
 			}
 		}
 	}
+	if len(squares) == len(matrix)*len(matrix[0]) {
+		return min(len(matrix), len(matrix[0])) * min(len(matrix), len(matrix[0]))
+	}
 	for index, square := range squares {
 		squares[index] = burst(square, matrix)
 	}
