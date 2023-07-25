@@ -6,10 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(leetcode.MaximalSquare([][]byte{
-
-		{'0', '1'}, {'1', '0'}},
-	//
-	//{'1', '0', '1', '0', '0'}, {'1', '0', '1', '1', '1'}, {'1', '1', '1', '1', '1'}, {'1', '0', '0', '1', '0'}},
-	))
+	fmt.Println(leetcode.FindUnsortedSubarray([]int{2, 6, 4, 8, 10, 9, 15}))
 }

@@ -42,7 +42,7 @@ func robBase(root *TreeNode) int {
 	return max(score1, score2)
 }
 */
-
+/*
 func rob(root *TreeNode) int {
 	scoreMap := make(map[*TreeNode]int)
 	return robBase(root, scoreMap)
@@ -107,7 +107,7 @@ func robBase(root *TreeNode, scoreMap map[*TreeNode]int) int {
 
 	scoreMap[root] = max(score1, score2)
 	return scoreMap[root]
-}
+}*/
 
 /**
 func rob(root *TreeNode) int {
