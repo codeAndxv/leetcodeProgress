@@ -1,7 +1,34 @@
 package leetcode
 
+import "math"
+
 func FindUnsortedSubarray(nums []int) int {
-	leftInit := false
+	minValue := math.MaxInt32
+	maxValue := math.MinInt32
+	for index := 0; index < len(nums)-1; index++ {
+		if nums[index] > nums[index+1] {
+			minValue = min(minValue, nums[index+1])
+			maxValue = max(maxValue, nums[index])
+		}
+	}
+	minLeft := len(nums)
+	maxRight := 0
+	for index := 0; index < len(nums)-1; index++ {
+		if nums[index] > minValue {
+			minLeft = min(minLeft, index)
+		}
+
+	}
+	for index := len(nums) - 1; index >= 0; index-- {
+		if nums[index] < maxValue {
+			maxRight = max(maxRight, index)
+		}
+	}
+	return max(0, maxRight-minLeft+1)
+}
+
+/**
+leftInit := false
 	leftIndex := len(nums) - 1
 	rightInit := false
 	rightIndex := 0
@@ -11,40 +38,45 @@ func FindUnsortedSubarray(nums []int) int {
 				leftIndex = min(leftIndex, index)
 				leftInit = true
 			}
-			if nums[leftIndex] > nums[index+1] {
-				for index1 := leftIndex - 1; index1 >= 0; index1-- {
-					if nums[index1] < nums[index+1] {
-						leftIndex = index1 + 1
-						break
-					}
-					if index1 == 0 {
-						leftIndex = 0
-					}
+			index1 := leftIndex - 1
+			for ; index1 >= 0; index1-- {
+				if nums[index1] <= nums[index+1] {
+					leftIndex = index1 + 1
+					break
+				}
+			}
+			if index1 < 0 {
+				if nums[index1+1] > nums[index+1] {
+					leftIndex = min(leftIndex, 0)
+					break
 				}
 			}
 		}
 	}
-	for index := len(nums) - 2; index >= 0; index-- {
-		if nums[index+1] < nums[index] {
+	for index := len(nums) - 1; index > 0; index-- {
+		if nums[index] < nums[index-1] {
 			if !rightInit {
 				rightIndex = max(rightIndex, index)
 				rightInit = true
 			}
-			if nums[rightIndex] < nums[index] {
-				for index1 := rightIndex + 1; index1 < len(nums); index1++ {
-					if nums[index1] > nums[index-1] {
-						rightIndex = index1
-						break
-					}
-					if index1 == len(nums)-1 {
-						rightIndex = len(nums) - 1
-					}
+
+			index1 := rightIndex + 1
+			for ; index1 < len(nums); index1++ {
+				if nums[index1] >= nums[index-1] {
+					rightIndex = index1
+					break
+				}
+			}
+			if index1 == len(nums) {
+				if nums[index1-1] < nums[index-1] {
+					rightIndex = max(rightIndex, index1)
+					break
 				}
 			}
 		}
 	}
 	if rightIndex > leftIndex {
-		return rightIndex - leftIndex + 1
+		return rightIndex - leftIndex
 	}
 	return 0
-}
+*/

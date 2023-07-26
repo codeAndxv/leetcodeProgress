@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(leetcode.FindUnsortedSubarray([]int{2, 6, 4, 8, 10, 9, 15}))
+	fmt.Println(leetcode.FindUnsortedSubarray([]int{1, 2, 3, 5, 4}))
 }
