@@ -15,13 +15,15 @@ func FindUnsortedSubarray(nums []int) int {
 	maxRight := 0
 	for index := 0; index < len(nums)-1; index++ {
 		if nums[index] > minValue {
-			minLeft = min(minLeft, index)
+			minLeft = index
+			break
 		}
 
 	}
 	for index := len(nums) - 1; index >= 0; index-- {
 		if nums[index] < maxValue {
-			maxRight = max(maxRight, index)
+			maxRight = index
+			break
 		}
 	}
 	return max(0, maxRight-minLeft+1)
