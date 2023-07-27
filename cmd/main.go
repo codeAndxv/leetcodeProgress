@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(leetcode.FindUnsortedSubarray([]int{1, 2, 3, 5, 4}))
+	fmt.Println(leetcode.FindKthLargest([]int{3, 2, 3, 1, 2, 4, 5, 5, 6}, 4))
 }

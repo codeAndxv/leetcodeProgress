@@ -2,7 +2,7 @@ package leetcode
 
 import "math"
 
-func FindUnsortedSubarray(nums []int) int {
+func findUnsortedSubarray(nums []int) int {
 	minValue := math.MaxInt32
 	maxValue := math.MinInt32
 	for index := 0; index < len(nums)-1; index++ {
