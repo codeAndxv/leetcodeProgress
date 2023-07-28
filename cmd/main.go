@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(leetcode.FindKthLargest([]int{1, 0, 1, 3}, 4))
+	fmt.Println(leetcode.PredictTheWinner([]int{1, 5, 233, 7}))
 }
