@@ -6,5 +6,6 @@ import (
 )
 
 func main() {
-	fmt.Println(leetcode.PredictTheWinner([]int{1, 5, 2, 4, 6}))
+	fmt.Println(leetcode.CanIWin(10, 20))
+
 }
