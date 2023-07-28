@@ -1,11 +1,37 @@
 package leetcode
 
 func findKthLargest(nums []int, k int) int {
-	return 0
+	left := 0
+	right := len(nums) - 1
+	stand := nums[0]
+	for right > left {
+		for right >= 0 && right > left {
+			if nums[right] >= stand {
+				right--
+			} else {
+				break
+			}
+		}
+		for left < len(nums) && right > left {
+			if nums[left] <= stand {
+				left++
+			} else {
+				break
+			}
+		}
+		if right > left {
+			nums[left], nums[right] = nums[right], nums[left]
+		}
+	}
+	nums[left], nums[0] = stand, nums[left]
+	if left < len(nums)-k {
+		return findKthLargest(nums[left+1:], k)
+	}
+	if left > len(nums)-k {
+		return findKthLargest(nums[:left], k-(len(nums)-left))
+	}
+	return nums[left]
 }
-
-6, 7 ,10 , 223, 31, 20, 12, 15, 90
-
 
 /**
 var num1, num2, num3 int
