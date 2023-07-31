@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	fmt.Println(leetcode.MaxDiff(111))
+	fmt.Println(leetcode.BulbSwitch(100000000))
 
 }
