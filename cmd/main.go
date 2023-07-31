@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	fmt.Println(leetcode.CanIWin(10, 20))
+	fmt.Println(leetcode.MaxDiff(111))
 
 }
