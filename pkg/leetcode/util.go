@@ -20,3 +20,17 @@ func min(a int, b int) int {
 	}
 	return a
 }
+
+func Sort(source []int) []int {
+	if len(source) < 2 {
+		return source
+	}
+	for i := 0; i < len(source); i++ {
+		for j := i + 1; j < len(source); j++ {
+			if source[i] > source[j] {
+				source[i], source[j] = source[j], source[i]
+			}
+		}
+	}
+	return source
+}

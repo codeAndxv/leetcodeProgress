@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	fmt.Println(leetcode.BulbSwitch(100000000))
+	fmt.Println(leetcode.GetCommon([]int{1, 2, 3}, []int{2, 4}))
 
 }
