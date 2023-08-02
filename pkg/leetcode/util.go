@@ -21,7 +21,7 @@ func min(a int, b int) int {
 	return a
 }
 
-func Sort(source []int) []int {
+func sort(source []int) []int {
 	if len(source) < 2 {
 		return source
 	}
