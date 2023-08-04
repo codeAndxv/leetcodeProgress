@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(leetcode.WiggleSort([]int{1, 3, 2, 4, 5}))
+	fmt.Println(leetcode.FirstMissingPositive([]int{1}))
 }

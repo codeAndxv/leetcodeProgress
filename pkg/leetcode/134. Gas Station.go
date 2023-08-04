@@ -1,6 +1,6 @@
 package leetcode
 
-func CanCompleteCircuit(gas []int, cost []int) int {
+func canCompleteCircuit(gas []int, cost []int) int {
 	status := make([]int, len(gas))
 	for index := 0; index < len(status); index++ {
 		status[index] = gas[index] - cost[index]
