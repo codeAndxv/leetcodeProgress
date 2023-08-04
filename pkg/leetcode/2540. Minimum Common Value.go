@@ -1,6 +1,6 @@
 package leetcode
 
-func GetCommon(nums1 []int, nums2 []int) int {
+func getCommon(nums1 []int, nums2 []int) int {
 	i := 0
 	j := 0
 	result := -1
