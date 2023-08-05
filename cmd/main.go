@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(leetcode.FirstMissingPositive([]int{1}))
+	fmt.Println(leetcode.PermuteUnique([]int{-1, 2, -1, 2, 1, -1, 2, 1}))
 }

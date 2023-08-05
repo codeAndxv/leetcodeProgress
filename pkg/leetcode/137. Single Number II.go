@@ -1,6 +1,6 @@
 package leetcode
 
-func singleNumber2(nums []int) int {
+func singleNumber(nums []int) int {
 	countMap := make(map[int]int)
 	for i := 0; i < len(nums); i++ {
 		if _, exist := countMap[nums[i]]; !exist {
