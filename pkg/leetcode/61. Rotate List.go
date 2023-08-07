@@ -1,5 +1,7 @@
 package leetcode
 
+import "fmt"
+
 func rotateRight(head *ListNode, k int) *ListNode {
 	if head == nil || head.Next == nil {
 		return head
@@ -10,24 +12,32 @@ func rotateRight(head *ListNode, k int) *ListNode {
 		length += 1
 		point1 = point1.Next
 	}
-	if k%length == 0 {
+	k = (length - k%length) % length
+	fmt.Println(k)
+	if k == 0 || k == length {
 		return head
 	}
-	point1 = head
-	for point1.Next != nil {
-		point1 = point1.Next
-	}
-	point1.Next = head
-	k = length - k%length
-	point1 = head
-	for i := k - 1; i > 0; i-- {
-		if i == 1 {
-			tem := point1
-			point1 = point1.Next
-			tem.Next = nil
-			continue
+	fmt.Println(k)
+	tem2 := head
+	for i := 0; i < length; i++ {
+		if i == length-1 {
+			tem2.Next = head
+			break
 		}
-		point1 = point1.Next
+		tem2 = tem2.Next
 	}
-	return head
+	tem := &ListNode{
+		Val:  0,
+		Next: head,
+	}
+	for i := 0; i < k; i++ {
+		if i == k-1 {
+			tem1 := tem.Next.Next
+			tem.Next.Next = nil
+			tem.Next = tem1
+			break
+		}
+		tem.Next = tem.Next.Next
+	}
+	return tem.Next
 }

@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(leetcode.PermuteUnique([]int{-1, 2, -1, 2, 1, -1, 2, 1}))
+	fmt.Println(leetcode.LargestRectangleArea([]int{4, 2, 0, 3, 2, 4, 3, 4}))
 }
