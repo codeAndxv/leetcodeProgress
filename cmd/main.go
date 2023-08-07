@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(leetcode.FirstMissingPositive([]int{1}))
+	fmt.Println(leetcode.UniquePathsWithObstacles([][]int{{0, 0}, {0, 1}}))
 }
