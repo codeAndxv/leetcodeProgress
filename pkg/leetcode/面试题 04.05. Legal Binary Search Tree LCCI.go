@@ -100,9 +100,3 @@ func (s *Stack) Pop() (interface{}, bool) {
 func (s *Stack) IsEmpty() bool {
 	return len(*s) == 0
 }
-
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
