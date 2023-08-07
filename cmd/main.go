@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(leetcode.UniquePathsWithObstacles([][]int{{0, 0}, {0, 1}}))
+	fmt.Println(leetcode.LargestRectangleArea([]int{4, 2, 0, 3, 2, 4, 3, 4}))
 }
