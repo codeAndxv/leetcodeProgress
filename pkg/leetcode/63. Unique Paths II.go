@@ -1,6 +1,6 @@
 package leetcode
 
-func UniquePathsWithObstacles(obstacleGrid [][]int) int {
+func uniquePathsWithObstacles(obstacleGrid [][]int) int {
 	m := len(obstacleGrid) - 1
 	n := len(obstacleGrid[0]) - 1
 	record := make([][]int, m+1)
