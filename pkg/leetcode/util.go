@@ -1,5 +1,7 @@
 package leetcode
 
+import "math"
+
 func abs(a int) int {
 	if a < 0 {
 		return -a
@@ -19,6 +21,10 @@ func min(a int, b int) int {
 		return b
 	}
 	return a
+}
+
+func pow(a int, b int) int {
+	return int(math.Pow(float64(a), float64(b)))
 }
 
 func sort(source []int) []int {
