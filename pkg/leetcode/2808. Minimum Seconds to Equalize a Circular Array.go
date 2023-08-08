@@ -1,5 +1,39 @@
 package leetcode
 
+import "math"
+
+func minimumSeconds(nums []int) int {
+	indexMap := make(map[int][]int)
+	for i, v := range nums {
+		if _, exist := indexMap[v]; !exist {
+			indexMap[v] = []int{i}
+		} else {
+			indexMap[v] = append(indexMap[v], i)
+		}
+	}
+	minStep := math.MaxInt32
+	for _, v := range indexMap {
+		minStep = min(minStep, needStep(v, len(nums)))
+	}
+	return minStep
+}
+
+func needStep(indexs []int, numlength int) int {
+	maxDistance := 0
+	if len(indexs) == 1 {
+		return numlength / 2
+	}
+	for i := 0; i < len(indexs); i++ {
+		if i == 0 {
+			maxDistance = max(maxDistance, (indexs[i]+numlength-indexs[len(indexs)-1])/2)
+		} else {
+			maxDistance = max(maxDistance, (indexs[i]-indexs[i-1])/2)
+		}
+	}
+	return maxDistance
+}
+
+/*
 func MinimumSeconds(nums []int) int {
 	num1 := getMostNum(nums)
 	step := 0
@@ -56,3 +90,4 @@ func getMostNum(nums []int) int {
 	}
 	return mostK
 }
+*/
