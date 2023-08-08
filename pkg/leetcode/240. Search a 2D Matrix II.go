@@ -1,51 +1,89 @@
 package leetcode
 
-func SearchMatrix(matrix [][]int, target int) bool {
-	tem := make([]int, max(len(matrix), len(matrix[0])))
-	for i, _ := range tem {
-		if len(matrix) >= len(matrix[0]) {
-			if i < len(matrix[0]) {
-				tem[i] = matrix[i][i]
-			} else {
-				tem[i] = matrix[i][len(matrix[0])-1]
-			}
-		} else {
-			if i < len(matrix) {
-				tem[i] = matrix[i][i]
-			} else {
-				tem[i] = matrix[len(matrix)-1][i]
-			}
-		}
-	}
-	index, find := binarySearch(tem, target)
-	if find {
-		return true
-	}
-	if index < 0 || index == max(len(matrix), len(matrix[0])) {
+import "fmt"
+
+func searchMatrix(matrix [][]int, target int) bool {
+	return searchMatrixBase(matrix, target, 0, 0, len(matrix)-1, len(matrix[0])-1)
+}
+
+func searchMatrixBase(matrix [][]int, target int, a1 int, b1 int, a2 int, b2 int) bool {
+	if a1 > a2 || b1 > b2 {
 		return false
 	}
-	if index+1 < len(matrix) {
-		for i := 0; i < min(len(matrix[0]), index+1); i++ {
-			if matrix[min(index, len(matrix)-1)][i] == target {
-				return true
-			}
-			if matrix[min(index, len(matrix)-1)][i] > target {
-				break
-			}
+	mida := (a1 + a2) / 2
+	midb := (b1 + b2) / 2
+	fmt.Println(matrix[mida][midb])
+	if matrix[mida][midb] == target {
+		return true
+	}
+	result := false
+	if matrix[mida][midb] < target {
+		result = result || searchMatrixBase(matrix, target, mida+1, b1, a2, b2)
+		if result {
+			return true
+		}
+		result = result || searchMatrixBase(matrix, target, a1, midb+1, a2, b2)
+		if result {
+			return true
+		}
+	} else {
+		result = result || searchMatrixBase(matrix, target, a1, b1, a2, midb-1)
+		if result {
+			return true
+		}
+		result = result || searchMatrixBase(matrix, target, a1, b1, mida-1, b2)
+		if result {
+			return true
 		}
 	}
-	if index+1 < len(matrix[0]) {
-		for i := index + 1; i < min(len(matrix), index+1); i++ {
-			if matrix[i][min(index, len(matrix[0])-1)] == target {
-				return true
-			}
-			if matrix[i][min(index, len(matrix[0])-1)] > target {
-				break
-			}
+	return result
+}
+
+/**
+tem := make([]int, max(len(matrix), len(matrix[0])))
+for i, _ := range tem {
+	if len(matrix) >= len(matrix[0]) {
+		if i < len(matrix[0]) {
+			tem[i] = matrix[i][i]
+		} else {
+			tem[i] = matrix[i][len(matrix[0])-1]
+		}
+	} else {
+		if i < len(matrix) {
+			tem[i] = matrix[i][i]
+		} else {
+			tem[i] = matrix[len(matrix)-1][i]
 		}
 	}
+}
+index, find := binarySearch(tem, target)
+if find {
+	return true
+}
+if index < 0 || index == max(len(matrix), len(matrix[0])) {
 	return false
 }
+if index+1 < len(matrix) {
+	for i := 0; i < min(len(matrix[0]), index+1); i++ {
+		if matrix[min(index, len(matrix)-1)][i] == target {
+			return true
+		}
+		if matrix[min(index, len(matrix)-1)][i] > target {
+			break
+		}
+	}
+}
+if index+1 < len(matrix[0]) {
+	for i := index + 1; i < min(len(matrix), index+1); i++ {
+		if matrix[i][min(index, len(matrix[0])-1)] == target {
+			return true
+		}
+		if matrix[i][min(index, len(matrix[0])-1)] > target {
+			break
+		}
+	}
+}
+return false
 
 func binarySearchRecursive(source []int, target, low, high int) (index int, find bool) {
 	if low > high {
@@ -67,6 +105,8 @@ func binarySearchRecursive(source []int, target, low, high int) (index int, find
 func binarySearch(source []int, target int) (index int, find bool) {
 	return binarySearchRecursive(source, target, 0, len(source)-1)
 }
+
+*/
 
 /**
 tem := make([]int, len(matrix))
