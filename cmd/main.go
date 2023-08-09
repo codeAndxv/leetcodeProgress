@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(leetcode.ComputeArea(-3, 0, 3, 4, 0, -1, 9, 2))
+	fmt.Println(leetcode.FindPeakElement([]int{1, 2}))
 }
