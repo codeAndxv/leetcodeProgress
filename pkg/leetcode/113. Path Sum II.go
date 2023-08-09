@@ -8,7 +8,7 @@ package leetcode
  *     Right *TreeNode
  * }
  */
-func pathSum(root *TreeNode, targetSum int) [][]int {
+/*func pathSum(root *TreeNode, targetSum int) [][]int {
 	currentPath := make([]int, 5000)
 	result := &[][]int{}
 	pathSumBase(root, 0, currentPath, targetSum, result)
@@ -32,3 +32,4 @@ func pathSumBase(root *TreeNode, currentSum int, currentPath *[]int, targetSum i
 	}
 	*currentPath = &(*currentPath[:len(*currentPath)-1])
 }
+*/

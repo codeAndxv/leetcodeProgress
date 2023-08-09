@@ -42,4 +42,3 @@ func bubbleSort(nums []int) []int {
 	}
 	return nums
 }
--4 -1 -1 0 1 2

@@ -1,7 +1,7 @@
 package leetcode
 
 func containsNearbyAlmostDuplicate(nums []int, indexDiff int, valueDiff int) bool {
-	if indexDiff == 1 {
+	/*if indexDiff == 1 {
 		for i := 1; i < len(nums); i++ {
 			if abs(nums[i]-nums[i-1]) <= valueDiff {
 				return true
@@ -51,6 +51,6 @@ func containsNearbyAlmostDuplicate(nums []int, indexDiff int, valueDiff int) boo
 				temMin = nums[i]
 			}
 		}
-	}
-
+	}*/
+	return false
 }

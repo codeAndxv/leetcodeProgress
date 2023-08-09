@@ -1,5 +1,6 @@
 package leetcode
 
-func divide(dividend int, divisor int) int {
+/*func divide(dividend int, divisor int) int {
 
 }
+*/
