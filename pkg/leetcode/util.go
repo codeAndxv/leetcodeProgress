@@ -87,6 +87,7 @@ func heapify(arr []int, n int, i int) {
 	// 如果最大值不是父节点，则交换父节点和最大值位置，并递归调整交换后的子树
 	if largest != i {
 		arr[i], arr[largest] = arr[largest], arr[i]
+		heapify(arr, n, largest)
 	}
 }
 

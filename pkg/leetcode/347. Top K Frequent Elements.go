@@ -1,15 +1,21 @@
 package leetcode
 
-func TopKFrequent(nums []int, k int) []int {
-	flagMap := make(map[int]bool)
+func topKFrequent(nums []int, k int) []int {
+	countsMap := make(map[int]int)
 	for _, v := range nums {
-		flagMap[v] = true
+		countsMap[v] += 1
 	}
-	keys := make([]int, 0, len(flagMap))
+	counts := make([]int, 0, len(countsMap))
 	// 遍历 map，将键添加到切片中
-	for key := range flagMap {
-		keys = append(keys, key)
+	for _, v := range countsMap {
+		counts = append(counts, v)
 	}
-	heapSort(keys, k)
-	return keys[len(keys)-k:]
+	heapSort(counts, k)
+	result := make([]int, 0)
+	for key, v := range countsMap {
+		if v >= counts[len(counts)-k] {
+			result = append(result, key)
+		}
+	}
+	return result
 }

@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(leetcode.TopKFrequent([]int{1, 1, 1, 2, 2, 3}, 2))
+	fmt.Println(leetcode.MinFallingPathSum([][]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}))
 }
