@@ -2,7 +2,7 @@ package leetcode
 
 import "math"
 
-func MinFallingPathSum(grid [][]int) int {
+func minFallingPathSum(grid [][]int) int {
 	records := make([][]int, len(grid))
 	for i := 0; i < len(grid); i++ {
 		records[i] = make([]int, len(grid))

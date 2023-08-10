@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(leetcode.MinFallingPathSum([][]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}))
+	fmt.Println(leetcode.ProductExceptSelf([]int{1, 2, 3, 4}))
 }
