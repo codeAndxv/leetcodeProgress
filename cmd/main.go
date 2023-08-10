@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(leetcode.NumSquares(48))
+	fmt.Println(leetcode.WordBreak("catsandog", []string{"cats", "dog", "sand", "and", "cat"}))
 }
