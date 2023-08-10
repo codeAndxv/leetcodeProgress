@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(leetcode.ProductExceptSelf([]int{1, 2, 3, 4}))
+	fmt.Println(leetcode.NumSquares(48))
 }
