@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(leetcode.SolveNQueens(8))
+	fmt.Println(leetcode.SolveNQueens(4))
 }
