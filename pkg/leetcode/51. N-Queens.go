@@ -22,7 +22,7 @@ func SolveNQueens(n int) [][]string {
 }
 
 func solveNQueensBase(n int, row int, status [][]bool, path []int, result *[][]string) {
-	for i := 1; i < n; i++ {
+	for i := 2; i < n; i++ {
 		if status[row][i] {
 			if row == n-1 {
 				path[row] = i
@@ -58,7 +58,7 @@ func rollback(n int, status [][]bool, a int, b int) {
 	for i := max(a-b, 0); i < min(n, n+a-b); i++ {
 		status[i][-(a-b)+i] = true
 	}
-	for i := max(a+b-n+1, 0); i < min(a+b, n); i++ {
+	for i := max(a+b-n+1, 0); i < min(a+b+1, n); i++ {
 		status[i][a+b-i] = true
 	}
 }
