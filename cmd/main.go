@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(leetcode.SolveNQueens(4))
+	fmt.Println(leetcode.DecodeString("3[a]2[bc]"))
 }
