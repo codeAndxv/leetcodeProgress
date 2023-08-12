@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(leetcode.DecodeString("3[a]2[bc]"))
+	fmt.Println(leetcode.SubarraySum([]int{-1, -1, 1}, 0))
 }
