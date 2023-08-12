@@ -25,7 +25,7 @@ package leetcode
 }
 */
 
-func SubarraySum(nums []int, k int) int {
+func subarraySum(nums []int, k int) int {
 	count, pre := 0, 0
 	m := map[int]int{}
 	m[0] = 1
