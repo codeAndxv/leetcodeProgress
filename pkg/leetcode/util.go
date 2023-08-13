@@ -42,7 +42,7 @@ func sortN2(source []int) []int {
 }
 
 func quickSort(arr []int) {
-	quickSortBase(arr, 0, len(arr))
+	quickSortBase(arr, 0, len(arr)-1)
 }
 
 func quickSortBase(arr []int, low, high int) {
