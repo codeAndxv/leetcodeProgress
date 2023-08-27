@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(leetcode.CircularGameLosers(6, 1))
+	fmt.Println(leetcode.MinOperations([]int{1, 2, 8}, 7))
 }
